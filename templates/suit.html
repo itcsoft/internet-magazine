@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ title }} {% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://manrule.ru/images/article/orig/2019/08/modnye-muzhskie-kostyumy-5.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://pix-feed.com/wp-content/uploads/2018/05/be28adfff47893c4519c1307dc6b8866_XL.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://sochi.scapp.ru/wp-content/uploads/post/2016/05/7_753_7263After-Six_2014_2_mood_05.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+      <h1 class="text-center mt-5 mb-5">Костюмы</h1>
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+body{
+    background-color: black;
+}
+h1{
+    color: blanchedalmond;
+}
+h2, p{
+    color: beige;
+}
+h4{
+    color: beige;
+}
+td{
+    color: aqua;
+}
+hr{
+    color: aqua;
+}
+
+.carousel-item img{
+    height: 350px;
+}
