@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from marketplace.views import base, homepage, suit
+from marketplace.views import base, homepage, suit, cart
+from internet_magazine.settings import MEDIA_URL, MEDIA_ROOT
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('base', base, name='base'),
     path('', homepage, name='homepage'),
     path('suit', suit, name='suit'),
+    path('cart', cart, name='cart'),
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)

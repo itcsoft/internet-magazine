@@ -13,13 +13,13 @@
     <header class="p-3 bg-dark text-white">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <img height="40" width="45" src="https://png.pngtree.com/element_our/png_detail/20181208/u-letter-logo-vector-design-initial-letter-u-logo-design-png_265183.jpg" alt="">
+            <a href="{% url 'homepage' %}"><img height="40" width="45" src="https://png.pngtree.com/element_our/png_detail/20181208/u-letter-logo-vector-design-initial-letter-u-logo-design-png_265183.jpg" alt=""></a>
     
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="#main" class="nav-link px-2 text-secondary">Home</a></li>
+              <li><a href="{% url 'homepage' %}" class="nav-link px-2 text-secondary">Главное</a></li>
               <li><a href="#suit" class="nav-link px-2 text-white">Костюмы</a></li>
               <li><a href="#wed" class="nav-link px-2 text-white">Платье</a></li>
-              <li><a href="#shoes" class="nav-link px-2 text-white">Туфли</a></li>
+              <li><a href="{% url 'cart' %}" class="nav-link px-2 text-white">Корзина</a></li>
               <li><a href="#contact" class="nav-link px-2 text-white">Контакты</a></li>
             </ul>
     
