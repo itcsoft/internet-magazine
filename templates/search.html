@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} Товары {% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Вы искали '{{ searched_value }}'</h1>
+
+    <h3 class="mt-0 mb-5">Нашли <span class="text-primary">{{count_of_products}}</span> товаров</h3>
+             
+   <div class="row">
+    {% for product in searched_products %}
+    <div class="col-6 col-md-6 col-lg-4 mb-3">
+        <div class="card h-100 border-0">
+            {% if product.image %}
+            <div class="card-img-top">
+                <img src="{{product.image.url}}" class="img-fluid mx-auto d-block" height="300px"
+                     width="100%" alt="Card image cap">
+            </div>
+            {% else %}
+            <div class="card-img-top">
+                <img src="https://via.placeholder.com/240x240/5fa9f8/efefef"
+                     class="img-fluid mx-auto d-block" alt="Card image cap">
+            </div>
+            {% endif %}
+            <div class="card-body text-center">
+                <h4 class="card-title">
+                    <a href=""
+                       class=" font-weight-bold text-dark text-uppercase small"> {{product.name}}</a>
+                </h4>
+                <h5 class="card-price small text-warning">
+                    <i>
+                        <s></s> {{product.price}} сом</i>
+                    <i></i>
+                </h5>
+                <a href="" class="btn btn-primary ">Добавить в
+                    корзину</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+
+
+{% endblock content %}

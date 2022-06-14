@@ -6,7 +6,6 @@
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <h1 align="center">Свадебные Одежды</h1>
       <img  height="500" src="https://style4man.com/wp-content/uploads/2019/03/O1FaCz2Gut0_06a94c9c408b70275eaa4c65cd176087_1.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
@@ -30,23 +29,21 @@
 </div>
 <br>
 
-{{ categories }}
 
 <div class="container marketing">
   <!-- START THE FEATURETTES -->
-      {% if count_category >= 2 %}
 
       {% for i in categories %}
   <hr class="featurette-divider">
 
-  <div class="row featurette" id="suit">
+  <div class="row featurette" id="products">
     <div class="col-md-7">
       <h2 align="center" class="featurette-heading">{{i.name}} <span class="text-muted"></span></h2>
-      <p align="center" class="lead">Самые лучшие кастюмы только у нас.<br>С лучшими ценами.</p>
-      <p align="center"><a class="btn btn-secondary" href="{% url 'suit' %}">Смотреть</a></p>
+      <p align="center" class="lead">{{i.description}}</p>
+      <p align="center"><a class="btn btn-secondary" href="{% url 'products' pk=i.pk %}">Смотреть</a></p>
     </div>
     <div class="col-md-5">
-      <img height="500" width="500" src="https://lh3.googleusercontent.com/FEE7O_Z4az4PeI262d56_tXeP2OQwjNudM0XhPOGYmUS3pGcEYdkRj5LkKpy1SnWpnTYGZ8Ld5dour4G63cYCCg=w512-h641-l80-e31" alt="">
+      <img height="500" width="500" src="{{i.img.url}}" alt="">
 
     </div>
   </div>
@@ -67,7 +64,6 @@
 
   <hr class="featurette-divider">
 {% endfor %}
-{% endif %}
 </div>
 
     <h4 align="center">CONTACT US</h4>

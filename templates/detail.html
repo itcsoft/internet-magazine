@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} {{detail_product.name}} {% endblock title %}
+
+{% block content %}
+
+
+    <div class="container bootdey mt-5">
+        <div class="col-md-12">
+        <section class="panel">
+              <div class="panel-body">
+                  <div class="col-md-6">
+                      <div class="pro-img-details">
+                          <img src="{{detail_product.image.url}} " alt="">
+                      </div>
+                   
+                  </div>
+                  <div class="col-md-6 mt-5">
+                      <h4 class="pro-d-title">
+                          <a href="#" class="">
+                            {{detail_product.name}} 
+                          </a>
+                      </h4>
+                      <p>
+                        {{detail_product.description}} 
+                      </p>
+                      <div class="product_meta">
+                          <span class="posted_in"> <strong>Категория:</strong> <a rel="tag" href="{% url 'homepage' %}">{{detail_product.category}} </a></span>
+                      </div>
+                      <div class="m-bot15"> <strong>Цена : </strong> <span class="amount-old">{{detail_product.price}} сом </span> </div>
+                      <p>
+                          <a href="{% url  'addToCart' pk=detail_product.pk %}" class="btn btn-round btn-danger" type="button"><i class="fa fa-shopping-cart"></i> Добавить в корзину</a>
+
+                          <a href="{% url  'products' pk=detail_product.pk %}" class="btn btn-round btn-primary" type="button"><i class="fa fa-shopping-cart"></i>Перейти в категорию</a>
+                   
+                      </p>
+
+                    
+                  </div>
+              </div>
+          </section>
+          </div>
+          </div>
+    
+
+
+
+{% endblock %}

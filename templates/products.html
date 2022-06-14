@@ -29,22 +29,7 @@
   {% endfor %} -->
 
   <div class="container">
-      <h1 class="text-center mt-5 mb-5">Костюмы</h1>
-      <!-- <div class="row">
-      {% for i in products %}
-
-      <div class="card" style="width: 18rem;">
-        <img src="{{ i.image.url }}" class="card-img-top" alt="img">
-        <div class="card-body">
-          <h5 class="card-title">{{ i.name }}</h5>
-          <p class="card-text">{{ i.description }}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-
-      {% endfor %}
-
-    </div> -->
+      <h1 class="text-center mt-5 mb-5">{{title}}</h1>
 
     <div class="row">
       {% for product in products %}
@@ -63,7 +48,7 @@
               {% endif %}
               <div class="card-body text-center">
                   <h4 class="card-title">
-                      <a href=""
+                      <a href="{% url 'detail' pk=product.pk %}"
                          class=" font-weight-bold text-dark text-uppercase small"> {{product.name}}</a>
                   </h4>
                   <h5 class="card-price small text-warning">
