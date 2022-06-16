@@ -4,6 +4,77 @@
 
 {% block content %}
 
-<h1>Корзина</h1>
+<div class="container px-3 my-5 clearfix">
+    <!-- Shopping cart table -->
+    <div class="card">
+        <div class="card-header">
+            <h2>Корзина покупателя</h2>
+            <p><i>Количество всех добавленных товаров в корзину: {{all_product_count}}</i></p>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered m-0">
+                <thead>
+                  <tr>
+                    <!-- Set columns width -->
+                    <th class="text-center py-3 px-4" style="min-width: 400px;">Название товара</th>
+                    <th class="text-right py-3 px-4" style="width: 100px;">Цена</th>
+                    <th class="text-center py-3 px-4" style="width: 120px;">Quantity</th>
+                    <th class="text-right py-3 px-4" style="width: 100px;">Общая сумма</th>
+                    <th class="text-center align-middle py-3 px-0" style="width: 40px;"><a href="#" class="shop-tooltip float-none text-light" title="" data-original-title="Clear cart"><i class="ino ion-md-trash"></i></a>Удалить</th>
+                  </tr>
+                </thead>
+                <tbody>
+        
+                    {% for product in products_inCart %}
+                  <tr>
+                    <td class="p-4">
+                      <div class="media align-items-center">
+                        <img src="{{product.image.url}}" class="d-block ui-w-40 ui-bordered mr-4" alt="">
+                        <div class="media-body">
+                          <a href="{% url 'detail' pk=product.pk %}" class="d-block text-dark">{{product.name}}</a>
+                          <small>
+                            <span class="text-muted">Категория: </span> {{product.category}} &nbsp;
+                          </small>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-right font-weight-semibold align-middle p-4">{{product.price}} сом</td>
+                    <td class="align-middle p-4"><input type="text" class="form-control text-center" value="{{product.count}}"></td>
+                    <td class="text-right font-weight-semibold align-middle p-4">{{product.sum}} сом</td>
+                    <td class="text-center align-middle px-0"><a href="{% url 'remove_from_url' pk=product.pk %}" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
+                  </tr>
+                    {% endfor %}
+        
+                </tbody>
+              </table>
+            </div>
+            <!-- / Shopping cart table -->
+        
+            <div class="d-flex flex-wrap justify-content-between align-items-center pb-4">
+              <div class="mt-4">
+                <!-- <label class="text-muted font-weight-normal">Promocode</label>
+                <input type="text" placeholder="ABC" class="form-control"> -->
+              </div>
+              <div class="d-flex">
+                <div class="text-right mt-4 mr-5">
+                  <!-- <label class="text-muted font-weight-normal m-0">Discount</label>
+                  <div class="text-large"><strong>$20</strong></div> -->
+                </div>
+                <div class="text-right mt-4">
+                  <label class="text-muted font-weight-normal m-0">Итоговая цена</label>
+                  <div class="text-large"><strong>{{all_product_total_sum}} сом</strong></div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="float-right">
+              <button type="button" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3">Bернуться к покупкам</button>
+              <a href="{% url 'order' %}" type="button" class="btn btn-lg btn-primary mt-2">Заказать</a>
+            </div>
+        
+          </div>
+      </div>
+  </div>
 
 {% endblock %}

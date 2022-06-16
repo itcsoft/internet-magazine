@@ -56,7 +56,7 @@
                           <s></s> {{product.price}} сом</i>
                       <i></i>
                   </h5>
-                  <a href="" class="btn btn-primary ">Добавить в
+                  <a href="{% url 'addToCart' pk=product.pk %}" class="btn btn-primary ">Добавить в
                       корзину</a>
               </div>
           </div>

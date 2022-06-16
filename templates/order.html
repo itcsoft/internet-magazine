@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Оформление заказа {% endblock title %}
+
+{% block content %}
+
+<form class="container mt-5" action="/order_data/" method="POST">
+  {% csrf_token %}
+    <h1>Оформление заказа</h1>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">ФИО получателя</label>
+        <input required type="text" name="c_name" class="form-control" id="exampleFormControlInput1" placeholder="ФИО">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Номер телефона</label>
+        <input required type="text" name="c_number" class="form-control" id="exampleFormControlInput1" placeholder="Номер телефона">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email почта</label>
+        <input required type="email" name="c_email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>  
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Адрес получателя</label>
+        <input required type="text" name="c_address" class="form-control" id="exampleFormControlInput1" placeholder="Адрес">
+      </div>
+      
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Сообщение</label>
+        <textarea class="form-control" name="c_message" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      
+      <button class="btn btn-primary mb-5" href="{% url 'order_data' %}" type="submit">Оформить заказ</button>
+</form>
+
+
+{% endblock %}
